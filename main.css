@@ -1,0 +1,244 @@
+/* RESET E VARIÁVEIS */
+:root {
+    --primary-color: #f68632;    
+    --secondary-color: #fec192; 
+    --accent-color: #be5200;     
+    --text-color: #333;          
+    --light-text: #f5f5f5;       
+    --hover-color: #2b46a0;     
+    --font-display: "Bungee", system-ui;
+    --font-body: "Roboto", system-ui;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-color);
+    background-color: #fffaf5; 
+}
+
+/* CONTAINER  */
+.container {
+    max-width: 1024px; 
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px; 
+}
+
+/* HEADER  */
+header {
+    background-color: var(--secondary-color);
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+header img {
+    width: 60px;
+}
+
+header h1 {
+    font-family: var(--font-display);
+    color: var(--accent-color);
+    font-size: 24px;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin-left: 24px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: var(--accent-color);
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: var(--hover-color);
+}
+
+/* SEÇÕES GERAIS */
+section {
+    padding: 60px 0; 
+}
+
+section h2 {
+    font-family: var(--font-display);
+    color: var(--accent-color);
+    font-size: 32px;
+    margin-bottom: 24px;
+    border-bottom: 4px solid var(--secondary-color);
+    display: inline-block;
+}
+
+section h3 {
+    font-family: var(--font-display);
+    color: var(--primary-color);
+    margin-bottom: 16px;
+}
+
+/* SOBRE A LOJA */
+.about-container {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.store-front {
+    width: 45%; 
+    border-radius: 16px;
+    box-shadow: 10px 10px 0px var(--secondary-color); 
+}
+
+.about-text {
+    flex: 1;
+    line-height: 1.6;
+}
+
+.brands-list {
+    margin-top: 20px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.brands-list img {
+    height: 50px;
+    filter: grayscale(100%); 
+    transition: filter 0.3s;
+}
+
+.brands-list img:hover {
+    filter: grayscale(0%); 
+}
+
+/* CONTATO E FORMULÁRIO */
+#contact {
+    background-color: #fff;
+}
+
+.contact-methods {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.contact-form {
+    flex: 1;
+}
+
+.contact-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+form input,
+form textarea {
+    width: 100%; 
+    padding: 12px;
+    margin-bottom: 16px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 8px; 
+    font-family: var(--font-body);
+    transition: border-color 0.3s;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+form textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+form button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    border: none;
+    border-radius: 8px;
+    font-family: var(--font-display);
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+form button:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-2px); 
+}
+
+.social-links {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.social-links li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.social-links img {
+    height: 32px;
+    transition: transform 0.3s;
+}
+
+.social-links img:hover {
+    transform: scale(1.2); 
+}
+
+/* FOOTER */
+footer {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    text-align: center;
+    padding: 24px 0;
+    font-size: 14px;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .about-container,
+    .contact-methods {
+        flex-direction: column;
+    }
+
+    .store-front {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
